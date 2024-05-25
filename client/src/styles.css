@@ -1,0 +1,167 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+select {
+  max-height: 25px;
+  max-width: 150px;
+  min-width: 75px;
+  margin-top: 8%;
+}
+
+h5 {
+  margin: 10px;
+}
+
+body {
+  background: white;
+  color: black;
+  padding: 1rem;
+  margin: 0 auto;
+}
+
+.title {
+  color: rgb(255, 255, 255);
+  font-family: "Arial";
+}
+
+.header {
+  text-align: left;
+  background: rgb(255, 255, 255);
+  color: rgb(41, 41, 63);
+  font-size: 20px;
+  font: arial;
+}
+
+.playerImg {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
+  height: 190px;
+  width: 262px;
+  background-color: rgba(255, 255, 255, 0.126);
+  border: 2px solid rgba(75, 192, 192, 1);
+}
+
+.player-container {
+  font-family: arial;
+  border-radius: 25px;
+  font-size: 24px;
+  margin: auto;
+  /* outline: solid 1px rgb(255, 255, 255); */
+  text-align: center;
+  width: 66.6%;
+}
+
+.stats-container1 {
+  /* outline: dashed 1px green; */
+  display: flex;
+  text-align: center;
+}
+
+.stats-container2 {
+  /* outline: dashed 1px green; */
+  margin-top: 5%;
+  display: flex;
+  text-align: center;
+}
+
+.stats-container3 {
+  /* outline: dashed 1px green; */
+  display: flex;
+  margin: auto;
+  margin-top: 5%;
+  width: 75%;
+}
+
+.imgContainer {
+  float: left;
+}
+
+.jerseynumber {
+  float: left;
+  width: 23.3%;
+  /* outline: dashed 1px red; */
+  font-family: "Arial";
+}
+
+.team {
+  float: left;
+  width: 10%;
+  /* outline: dashed 1px red; */
+  font-family: "Arial";
+  margin-right: 33.3%;
+}
+
+.ppr {
+  float: left;
+  width: 23.3%;
+  /* outline: dashed 1px red; */
+  font-family: "Arial";
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.subdata {
+  float: left;
+  width: 50%;
+  font-size: 18px;
+}
+
+.subdata2 {
+  float: left;
+  width: 50%;
+  font-size: 24px;
+}
+
+.subdata3 {
+  float: left;
+  width: 33.3%;
+  font-size: 18px;
+}
+
+.rank {
+  width: 23.3%;
+  /* outline: dashed 1px blue; */
+  font-family: "Arial";
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.statistics {
+  width: 23.3%;
+  /* outline: dashed 1px rgb(255, 162, 0); */
+  font-family: "Arial";
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.table-container {
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #dddddd65;
+}
+
+th {
+  background-color: #f9f9f91d;
+  font-weight: bold;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f9f9f91d;
+}
+
+tbody tr:hover {
+  background-color: #f5f5f53e;
+}
