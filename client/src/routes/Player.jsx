@@ -5,6 +5,23 @@ import "../styles.css";
 import Navbar from "./NavBar";
 import { Heading } from "@chakra-ui/react";
 
+/* Return player rank in total PPR */
+function getAvg(data, player) {
+  let allPPR = [];
+  let rank = 1;
+
+  /* Make array of all PPR */
+  for (let i in data) {
+    allPPR[i] = data[i].totalPPR;
+  }
+
+  allPPR = allPPR.sort().reverse();
+  for (let j in allPPR) {
+    if (player.totalPPR < allPPR[j]) rank += 1;
+  }
+  return rank;
+}
+
 const Player = () => {
   const location = useLocation();
   const { from } = location.state;
@@ -12,6 +29,8 @@ const Player = () => {
 
   const { slug } = useParams();
   const player = data.find((x) => x.longname === slug);
+
+  const rank = getAvg(data, player);
 
   const points = player.ppr_by_week;
   const labels = [
@@ -76,8 +95,8 @@ const Player = () => {
           </div>
           <div className="rank">
             <h5>RANK</h5>
-            <div className="subdata">#73</div>
-            <div className="subdata">#243</div>
+            <div className="subdata">{rank}</div>
+            <div className="subdata">{rank}</div>
             <div className="subdata">{player.position}</div>
             <div className="subdata">Overall</div>
           </div>

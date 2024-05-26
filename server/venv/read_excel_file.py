@@ -7,7 +7,7 @@ s_array = df[["week1","week2","week3","week4","week5","week6","week7","week8","w
 
 df = pd.read_excel(r".\Data\Data_Book.xlsx", usecols="A:L") # reads values from columns A-L
 
-df['ppr_by_week'] = [s_array[0],s_array[1],s_array[2],s_array[3]]
+df['ppr_by_week'] = [s_array[0],s_array[1],s_array[2],s_array[3],s_array[4]]
 
 df.to_json('player_data.json', orient='records') # dataframe to json
 
