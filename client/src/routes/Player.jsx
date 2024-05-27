@@ -15,9 +15,59 @@ function getAvg(data, player) {
     allPPR[i] = data[i].totalPPR;
   }
 
+  /* Sort and reverse */
   allPPR = allPPR.sort().reverse();
   for (let j in allPPR) {
     if (player.totalPPR < allPPR[j]) rank += 1;
+  }
+  return rank;
+}
+
+/* Return player rank in total PPR */
+function getPosAvg(data, player) {
+  let QBPPR = [];
+  let WRPPR = [];
+  let RBPPR = [];
+  let TEPPR = [];
+  let rank = 1;
+
+  /* Make array of all PPR */
+  for (let i in data) {
+    if (data[i].position === "QB") QBPPR[i] = data[i].totalPPR;
+    else if (data[i].position === "WR") WRPPR[i] = data[i].totalPPR;
+    else if (data[i].position === "RB") RBPPR[i] = data[i].totalPPR;
+    else if (data[i].position === "TE") TEPPR[i] = data[i].totalPPR;
+    else continue;
+  }
+
+  /* Sort and reverse */
+  QBPPR = QBPPR.sort().reverse();
+  WRPPR = WRPPR.sort().reverse();
+  RBPPR = RBPPR.sort().reverse();
+  TEPPR = TEPPR.sort().reverse();
+
+  /* Find rank in given position ranking */
+  switch (player.position) {
+    case "QB":
+      for (let j in QBPPR) {
+        if (player.totalPPR < QBPPR[j]) rank += 1;
+      }
+      break;
+    case "WR":
+      for (let j in WRPPR) {
+        if (player.totalPPR < WRPPR[j]) rank += 1;
+      }
+      break;
+    case "RB":
+      for (let j in RBPPR) {
+        if (player.totalPPR < RBPPR[j]) rank += 1;
+      }
+      break;
+    case "TE":
+      for (let j in TEPPR) {
+        if (player.totalPPR < TEPPR[j]) rank += 1;
+      }
+      break;
   }
   return rank;
 }
@@ -31,6 +81,7 @@ const Player = () => {
   const player = data.find((x) => x.longname === slug);
 
   const rank = getAvg(data, player);
+  const positionRank = getPosAvg(data, player);
 
   const points = player.ppr_by_week;
   const labels = [
@@ -95,7 +146,7 @@ const Player = () => {
           </div>
           <div className="rank">
             <h5>RANK</h5>
-            <div className="subdata">{rank}</div>
+            <div className="subdata">{positionRank}</div>
             <div className="subdata">{rank}</div>
             <div className="subdata">{player.position}</div>
             <div className="subdata">Overall</div>
