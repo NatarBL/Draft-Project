@@ -12,7 +12,8 @@ const Table = ({ data }) => {
       { Header: "Team", accessor: "team" },
       { Header: "Height", accessor: "height" },
       { Header: "Weight", accessor: "weight" },
-      { Header: "PPR", accessor: "totalPPR" },
+      { Header: "Avg PPR", accessor: "avgPPR" },
+      { Header: "Total PPR", accessor: "totalPPR" },
     ],
     []
   );
