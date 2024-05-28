@@ -127,6 +127,10 @@ const Player = () => {
           <img
             src={`./src/components/imgs/${player.id}.png`}
             alt={player.longname}
+            onError={({ currentTarget }) => {
+              currentTarget.onerror = null;
+              currentTarget.src = `./src/components/imgs/${0}.png`;
+            }}
             className="playerImg"
           ></img>
         </div>
@@ -146,8 +150,8 @@ const Player = () => {
           </div>
           <div className="rank">
             <h5>RANK</h5>
-            <div className="subdata">{positionRank}</div>
-            <div className="subdata">{rank}</div>
+            <div className="subdata">#{positionRank}</div>
+            <div className="subdata">#{rank}</div>
             <div className="subdata">{player.position}</div>
             <div className="subdata">Overall</div>
           </div>
