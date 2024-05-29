@@ -1,6 +1,6 @@
 # NFL Draft Project
 
-My NFL draft project take the stats of NFL players and organizes their PPR (point per reception) per week and charts them so fantasy football "coaches" can see hwo a players performance changes weeks by week. 
+The NFL draft project takes the stats of NFL players and organizes their PPR (point per reception) per week and charts them so fantasy football "coaches" can see a players performance change weekly. 
 
 ## Usage
 NOTE: First run server i.e, main.py
