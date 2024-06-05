@@ -104,10 +104,16 @@ const Player = () => {
     "Week 17",
   ];
 
+  /* Check for -1 (expresses bye week or injury in excel sheet) */
+  for (let i in points) {
+    if (points[i] === -1 || points[i] === undefined) points[i] = null;
+  }
+
   const [timeline, setTimeline] = useState({
     labels: labels,
     datasets: [
       {
+        spanGaps: true,
         label: "PPR",
         data: points,
         backgroundColor: ["rgba(75,192,192,1)"],
@@ -167,6 +173,7 @@ const Player = () => {
         </div>
         <div className="stats-container3">
           <div style={{ width: 800, margin: 50 }}>
+            {console.log(timeline)}
             <LineChart chartData={timeline} />
           </div>
         </div>
