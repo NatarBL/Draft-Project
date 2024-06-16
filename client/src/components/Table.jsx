@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 
 const Table = ({ data }) => {
   /* Create columns */
+  /** TODO: Add column for position specific information **/
   const columns = useMemo(
     () => [
       { Header: "Name", accessor: "longname" },
